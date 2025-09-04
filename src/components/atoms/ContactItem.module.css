@@ -1,0 +1,32 @@
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: white;
+}
+
+.icon {
+  font-size: 1.1rem;
+  min-width: 1.5rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .contactItem {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactItem {
+    font-size: 0.85rem;
+    justify-content: center;
+  }
+}

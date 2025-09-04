@@ -1,0 +1,196 @@
+/* Typography Atoms */
+
+/* Heading Atoms */
+.heading1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: rgb(135, 20, 37); /* メインカラー */
+}
+
+.heading2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  color: rgb(135, 20, 37);
+}
+
+.heading3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: rgb(46, 10, 25); /* サブカラー1 */
+}
+
+.heading4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: rgb(46, 10, 25);
+}
+
+.heading5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: rgb(46, 10, 25);
+}
+
+.heading6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: rgb(46, 10, 25);
+}
+
+/* Body Text Atoms */
+.bodyLarge {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: rgb(46, 10, 25);
+}
+
+.bodyMedium {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.bodySmall {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  color: #666;
+}
+
+.caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: #999;
+}
+
+/* Link Atoms */
+.linkPrimary {
+  color: rgb(135, 20, 37);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkPrimary:hover {
+  color: rgb(46, 10, 25);
+  text-decoration: underline;
+}
+
+.linkSecondary {
+  color: rgb(46, 10, 25);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkSecondary:hover {
+  color: rgb(135, 20, 37);
+  text-decoration: underline;
+}
+
+.linkLight {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkLight:hover {
+  color: rgb(197, 207, 195);
+  text-decoration: underline;
+}
+
+/* Color Modifiers */
+.textPrimary {
+  color: rgb(135, 20, 37) !important;
+}
+
+.textSecondary {
+  color: rgb(46, 10, 25) !important;
+}
+
+.textAccent {
+  color: rgb(197, 207, 195) !important;
+}
+
+.textWhite {
+  color: white !important;
+}
+
+.textDark {
+  color: #333 !important;
+}
+
+.textMuted {
+  color: #666 !important;
+}
+
+/* Weight Modifiers */
+.fontLight {
+  font-weight: 300;
+}
+
+.fontNormal {
+  font-weight: 400;
+}
+
+.fontMedium {
+  font-weight: 500;
+}
+
+.fontSemibold {
+  font-weight: 600;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+/* Responsive Typography */
+@media (min-width: 768px) {
+  .heading1 {
+    font-size: 2.5rem;
+  }
+  
+  .heading2 {
+    font-size: 2rem;
+  }
+  
+  .heading3 {
+    font-size: 1.75rem;
+  }
+  
+  .bodyLarge {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading1 {
+    font-size: 3rem;
+  }
+  
+  .heading2 {
+    font-size: 2.25rem;
+  }
+  
+  .heading3 {
+    font-size: 2rem;
+  }
+  
+  .bodyLarge {
+    font-size: 1.3rem;
+  }
+}

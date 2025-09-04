@@ -1,0 +1,62 @@
+/* Button Atom */
+.button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Primary Button (CTA Style) */
+.buttonPrimary {
+  background: linear-gradient(135deg, rgb(46, 10, 25) 0%, rgb(46, 10, 25) 50%, rgb(197, 207, 195) 50%, rgb(197, 207, 195) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: rgb(135, 20, 37);
+}
+
+.buttonPrimary:hover {
+  background-position: 0% 0;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary Button (Mobile Style) */
+.buttonSecondary {
+  background: rgb(197, 207, 195);
+  color: rgb(135, 20, 37);
+}
+
+.buttonSecondary:hover {
+  background-color: rgb(46, 10, 25);
+  color: white;
+}
+
+/* Size Variants */
+.buttonSmall {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.buttonMedium {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.buttonLarge {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* Block Button */
+.buttonBlock {
+  width: 100%;
+  max-width: 300px;
+}

@@ -1,49 +1,79 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Corporate Website
 
-## 🚀 Quick start
+Gatsby を使用したコーポレートサイトプロジェクト
 
-1.  **Create a Gatsby site.**
+## 🎨 設計思想
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+### Atomic Design
+本プロジェクトは **Atomic Design** の原則に基づいて構築されています。
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- **Atoms**: 最小単位のコンポーネント（Button, Logo, Typography など）
+- **Molecules**: Atomsを組み合わせた機能単位（Navigation など）
+- **Organisms**: Molecules/Atomsを統合した複合コンポーネント（Header, Footer など）
+- **Templates**: ページレイアウトの構造
+- **Pages**: 実際のページコンポーネント
 
-2.  **Start developing.**
+### カラーパレット
+- **メインカラー**: `rgb(135, 20, 37)`
+- **サブカラー1**: `rgb(46, 10, 25)`
+- **サブカラー2**: `rgb(197, 207, 195)`
 
-    Navigate into your new site’s directory and start it up.
+### レスポンシブ対応
+- モバイルファースト設計
+- 段階的なブレークポイント対応
+- CSS Grid & Flexbox による柔軟なレイアウト
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## 🚀 開発開始
 
-3.  **Open the code and start customizing!**
+### 前提条件
+- Node.js (v18以上推奨)
+- npm または yarn
 
-    Your site is now running at http://localhost:8000!
+### セットアップ
+```bash
+# 依存関係のインストール
+npm install
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+# 開発サーバーの起動
+npm run develop
+```
 
-4.  **Learn more**
+開発サーバーは http://localhost:8000 で起動します。
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### ビルド
+```bash
+# 本番用ビルド
+npm run build
 
-## 🚀 Quick start (Netlify)
+# ビルド結果のプレビュー
+npm run serve
+```
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+## 📁 プロジェクト構造
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+```
+src/
+├── components/
+│   ├── atoms/          # 最小単位のコンポーネント
+│   ├── molecules/      # 機能単位のコンポーネント
+│   ├── organisms/      # 複合コンポーネント
+│   ├── templates/      # ページテンプレート
+│   └── pages/          # ページコンポーネント
+├── pages/              # Gatsbyページファイル
+├── styles/             # グローバルスタイル
+└── images/             # 画像ファイル
+```
+
+## 📚 ドキュメント
+
+詳細な技術仕様やコンポーネントの使用方法については、`docs/` ディレクトリをご参照ください。
+
+- [Header Components](./docs/header-components.md) - ヘッダー関連コンポーネントの詳細
+
+## 🛠️ 技術スタック
+
+- **Framework**: Gatsby
+- **Language**: JavaScript (React)
+- **Styling**: CSS Modules
+- **Design System**: Atomic Design
+- **Build Tool**: Webpack (Gatsby内蔵)

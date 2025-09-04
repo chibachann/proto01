@@ -1,0 +1,21 @@
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .contactInfo {
+    text-align: center;
+  }
+  
+  .contactList {
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
