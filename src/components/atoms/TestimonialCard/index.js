@@ -18,7 +18,7 @@ const TestimonialCard = ({
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className={styles.quoteIcon}>
-        <span>"</span>
+        <span>💬</span>
       </div>
       
       <blockquote className={styles.quote}>

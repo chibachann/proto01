@@ -8,11 +8,13 @@
   transform: translateY(30px);
   opacity: 0;
   border: 1px solid #f7fafc;
+  z-index: 1;
 }
 
 .testimonialCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(var(--color-primary), 0.15);
+  z-index: 2;
 }
 
 .testimonialCardVisible {
@@ -22,6 +24,7 @@
 
 .testimonialCardVisible:hover {
   transform: translateY(-8px);
+  z-index: 2;
 }
 
 .quoteIcon {
@@ -31,13 +34,13 @@
   width: 40px;
   height: 40px;
   background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
-  font-family: serif;
+  font-weight: bold;
 }
 
 .quote {
@@ -128,8 +131,9 @@
   .quoteIcon {
     width: 35px;
     height: 35px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     left: 1.5rem;
+    border-radius: 6px;
   }
   
   .quote {
