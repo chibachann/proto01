@@ -1,7 +1,7 @@
 import * as React from "react"
-import FooterSection from "../molecules/FooterSection"
-import ContactInfo from "../molecules/ContactInfo"
-import SocialLinks from "../molecules/SocialLinks"
+import FooterSection from "../../molecules/FooterSection"
+import ContactInfo from "../../molecules/ContactInfo"
+import SocialLinks from "../../molecules/SocialLinks"
 import * as styles from "./Footer.module.css"
 
 const Footer = ({ 

@@ -1,11 +1,17 @@
-import * as React from "react"
-import * as styles from "./HeaderNew.module.css"
-import Logo from "../atoms/Logo"
-import Button from "../atoms/Button"
-import HamburgerMenu from "../atoms/HamburgerMenu"
-import Navigation from "../molecules/Navigation"
 
-const HeaderNew = () => {
+import * as React from "react"
+import * as styles from "./Header.module.css"
+import Logo from "../../atoms/Logo"
+import Button from "../../atoms/Button"
+import HamburgerMenu from "../../atoms/HamburgerMenu"
+import Navigation from "../../molecules/Navigation"
+
+const Header = ({ 
+  navigation = [], 
+  ctaButton = null, 
+  siteName = "Your Company",
+  className = ""
+}) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   const toggleMobileMenu = () => {
@@ -18,20 +24,26 @@ const HeaderNew = () => {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${className}`}>
         <div className={styles.container}>
-          <Logo>Your Company</Logo>
+          <Logo>{siteName}</Logo>
           
           <Navigation 
+            items={navigation}
             isOpen={isMobileMenuOpen} 
             onLinkClick={closeMobileMenu}
           />
           
-          <div className={styles.ctaButton}>
-            <Button to="/contact" variant="primary">
-              お見積り依頼
-            </Button>
-          </div>
+          {ctaButton && (
+            <div className={styles.ctaButton}>
+              <Button 
+                to={ctaButton.path} 
+                variant={ctaButton.variant || "primary"}
+              >
+                {ctaButton.label}
+              </Button>
+            </div>
+          )}
           
           <div className={styles.hamburger}>
             <HamburgerMenu 
@@ -51,4 +63,4 @@ const HeaderNew = () => {
   )
 }
 
-export default HeaderNew
+export default Header

@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/templates/Layout"
 import { siteConfig } from "../config/siteConfig"
-import * as typography from "../components/atoms/Typography.module.css"
+import * as typography from "../components/atoms/Typography/Typography.module.css"
 
 const IndexPage = () => {
   return (

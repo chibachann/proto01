@@ -1,7 +1,7 @@
 import * as React from "react"
-import Header from "../organisms/Header"
-import Footer from "../organisms/Footer"
-import { siteConfig } from "../../config/siteConfig"
+import Header from "../../organisms/Header"
+import Footer from "../../organisms/Footer"
+import { siteConfig } from "../../../config/siteConfig"
 import * as styles from "./Layout.module.css"
 
 const Layout = ({ 

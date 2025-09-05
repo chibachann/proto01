@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import * as styles from "./Navigation.module.css"
-import * as typography from "../atoms/Typography.module.css"
-import Button from "../atoms/Button"
+import * as typography from "../../atoms/Typography/Typography.module.css"
+import Button from "../../atoms/Button"
 
 const Navigation = ({ items = [], isOpen, onLinkClick, mobileCtaButton = null }) => {
   return (

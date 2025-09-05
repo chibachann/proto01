@@ -1,6 +1,6 @@
 import * as React from "react"
-import SectionTitle from "../atoms/SectionTitle"
-import FooterLink from "../atoms/FooterLink"
+import SectionTitle from "../../atoms/SectionTitle"
+import FooterLink from "../../atoms/FooterLink"
 import * as styles from "./FooterSection.module.css"
 
 const FooterSection = ({ title, links, className = "" }) => {

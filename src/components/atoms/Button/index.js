@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import * as styles from "./Button.module.css"
-import * as typography from "./Typography.module.css"
+import * as typography from "../Typography/Typography.module.css"
 
 const Button = ({ 
   to, 

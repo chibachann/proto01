@@ -1,6 +1,6 @@
 import * as React from "react"
-import SectionTitle from "../atoms/SectionTitle"
-import ContactItem from "../atoms/ContactItem"
+import SectionTitle from "../../atoms/SectionTitle"
+import ContactItem from "../../atoms/ContactItem"
 import * as styles from "./ContactInfo.module.css"
 
 const ContactInfo = ({ contactData = {}, className = "" }) => {

@@ -1,5 +1,5 @@
 import * as React from "react"
-import SocialLink from "../atoms/SocialLink"
+import SocialLink from "../../atoms/SocialLink"
 import * as styles from "./SocialLinks.module.css"
 
 const SocialLinks = ({ socialData = [], className = "" }) => {
