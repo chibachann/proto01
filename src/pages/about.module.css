@@ -1,0 +1,353 @@
+/* 会社概要ページのスタイル */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ヒーローセクション */
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.05) 100%);
+  border-radius: 2rem;
+  margin: 2rem 0 4rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: rgb(var(--color-primary));
+  font-weight: 700;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* セクションタイトル */
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(var(--color-primary));
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* ミッションセクション */
+.missionSection {
+  margin: 6rem 0;
+  background: rgba(var(--color-accent), 0.03);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+}
+
+.missionContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.missionText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.missionText p {
+  margin-bottom: 1.5rem;
+}
+
+.missionText p:last-child {
+  margin-bottom: 0;
+}
+
+/* 価値観セクション */
+.valuesSection {
+  margin: 6rem 0;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.valueCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.valueCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgb(var(--color-primary)) 0%, 
+    rgb(var(--color-secondary)) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(var(--color-primary), 0.1);
+}
+
+.valueCard:hover::before {
+  transform: scaleX(1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.valueTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1rem;
+}
+
+.valueDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 会社情報セクション */
+.companyInfoSection {
+  margin: 6rem 0;
+}
+
+.companyInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.infoCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(var(--color-primary), 0.1);
+  border-color: rgba(var(--color-primary), 0.3);
+}
+
+.businessCard {
+  grid-column: 1 / -1;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: rgb(var(--color-secondary));
+  font-size: 0.95rem;
+}
+
+.infoValue {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.businessList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.businessItem {
+  padding: 1rem 0;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid rgba(var(--color-accent), 0.2);
+}
+
+.businessItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: rgb(var(--color-primary));
+  font-weight: bold;
+}
+
+/* CTAセクション */
+.ctaSection {
+  margin: 6rem 0;
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.1) 100%);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1.5rem;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .missionSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .missionText {
+    font-size: 1rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .valueCard {
+    padding: 2rem;
+  }
+
+  .companyInfoGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .infoCard {
+    padding: 2rem;
+  }
+
+  .infoItem {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .businessList {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ctaTitle {
+    font-size: 2rem;
+  }
+
+  .ctaDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard,
+  .infoCard {
+    padding: 1.5rem;
+  }
+
+  .missionText {
+    font-size: 0.95rem;
+  }
+}

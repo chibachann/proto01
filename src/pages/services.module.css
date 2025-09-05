@@ -1,0 +1,269 @@
+/* サービス一覧ページのスタイル */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ヒーローセクション */
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.05) 100%);
+  border-radius: 2rem;
+  margin: 2rem 0 4rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: rgb(var(--color-primary));
+  font-weight: 700;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* サービスセクション */
+.servicesSection {
+  margin-bottom: 6rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* サービスカード */
+.serviceCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgb(var(--color-primary)) 0%, 
+    rgb(var(--color-secondary)) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(var(--color-primary), 0.15);
+  border-color: rgba(var(--color-primary), 0.3);
+}
+
+.serviceCard:hover::before {
+  transform: scaleX(1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.serviceTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin: 0;
+  flex: 1;
+}
+
+.servicePrice {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgb(var(--color-secondary));
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  background: rgba(var(--color-secondary), 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(var(--color-secondary), 0.2);
+}
+
+.serviceDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* 機能リスト */
+.features {
+  margin-bottom: 2.5rem;
+}
+
+.featuresTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1rem;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(var(--color-accent), 0.2);
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.featureItem:last-child {
+  border-bottom: none;
+}
+
+.featureItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: rgb(var(--color-primary));
+  font-weight: bold;
+}
+
+.cardFooter {
+  text-align: center;
+}
+
+.detailLink {
+  text-decoration: none;
+}
+
+/* CTAセクション */
+.cta {
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.1) 100%);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1.5rem;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .serviceCard {
+    padding: 2rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.5rem;
+  }
+
+  .servicePrice {
+    font-size: 1.1rem;
+    align-self: flex-end;
+  }
+
+  .cta {
+    padding: 3rem 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 2rem;
+  }
+
+  .ctaDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .serviceCard {
+    padding: 1.5rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.375rem;
+  }
+}

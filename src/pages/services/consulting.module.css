@@ -1,0 +1,345 @@
+/* DXコンサルティングサービス詳細ページのスタイル */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ヒーローセクション */
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.05) 100%);
+  border-radius: 2rem;
+  margin: 2rem 0 4rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: rgb(var(--color-primary));
+  font-weight: 700;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* セクションタイトル */
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(var(--color-primary));
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* サービスセクション */
+.servicesSection {
+  margin: 6rem 0;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.serviceCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgb(var(--color-primary)) 0%, 
+    rgb(var(--color-secondary)) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(var(--color-primary), 0.1);
+}
+
+.serviceCard:hover::before {
+  transform: scaleX(1);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1rem;
+}
+
+.serviceDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 効果セクション */
+.benefitsSection {
+  margin: 6rem 0;
+  background: rgba(var(--color-accent), 0.03);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefitCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(var(--color-primary), 0.1);
+  border-color: rgba(var(--color-primary), 0.3);
+}
+
+.benefitPercentage {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1rem;
+}
+
+.benefitTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: rgb(var(--color-secondary));
+  margin-bottom: 1rem;
+}
+
+.benefitDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 料金セクション */
+.pricingSection {
+  margin: 6rem 0;
+}
+
+.pricingCard {
+  background: rgba(var(--color-accent), 0.05);
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(var(--color-primary), 0.1);
+  border-color: rgba(var(--color-primary), 0.3);
+}
+
+.pricingTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(var(--color-secondary));
+  margin-bottom: 1.5rem;
+}
+
+.pricingDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(var(--color-accent), 0.2);
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: rgb(var(--color-primary));
+  font-weight: bold;
+}
+
+/* CTAセクション */
+.cta {
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary), 0.1) 0%, 
+    rgba(var(--color-secondary), 0.1) 100%);
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin-bottom: 1.5rem;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .servicesGrid,
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .serviceCard,
+  .benefitCard {
+    padding: 2rem;
+  }
+
+  .benefitsSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .pricingCard {
+    padding: 2rem;
+  }
+
+  .ctaTitle {
+    font-size: 2rem;
+  }
+
+  .ctaDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .serviceCard,
+  .benefitCard,
+  .pricingCard {
+    padding: 1.5rem;
+  }
+
+  .benefitPercentage {
+    font-size: 2.5rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+}
