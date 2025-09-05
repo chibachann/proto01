@@ -9,7 +9,6 @@ const ServicesSection = ({
 }) => {
   const [isVisible, setIsVisible] = React.useState(false)
   const [hoveredIndex, setHoveredIndex] = React.useState(null)
-  const [activeFilter, setActiveFilter] = React.useState('all')
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -123,20 +122,7 @@ const ServicesSection = ({
     }
   ]
 
-  const categories = [
-    { id: 'all', name: '全て', icon: '🌟' },
-    { id: 'technology', name: 'テクノロジー', icon: '🚀' },
-    { id: 'design', name: 'デザイン', icon: '🎨' },
-    { id: 'development', name: '開発', icon: '💻' },
-    { id: 'cloud', name: 'クラウド', icon: '☁️' },
-    { id: 'security', name: 'セキュリティ', icon: '🛡️' },
-    { id: 'data', name: 'データ', icon: '📊' }
-  ]
-
   const servicesToRender = services.length > 0 ? services : defaultServices
-  const filteredServices = activeFilter === 'all' 
-    ? servicesToRender 
-    : servicesToRender.filter(service => service.category === activeFilter)
 
   return (
     <section id="services-section" className={`${styles.servicesSection} ${className}`}>
@@ -172,24 +158,9 @@ const ServicesSection = ({
           </div>
         </div>
 
-        {/* フィルター */}
-        <div className={`${styles.filterSection} ${isVisible ? styles.filterVisible : ''}`}>
-          {categories.map((category, index) => (
-            <button
-              key={category.id}
-              className={`${styles.filterButton} ${activeFilter === category.id ? styles.filterActive : ''}`}
-              onClick={() => setActiveFilter(category.id)}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <span className={styles.filterIcon}>{category.icon}</span>
-              <span className={styles.filterName}>{category.name}</span>
-            </button>
-          ))}
-        </div>
-
         {/* サービスグリッド */}
         <div className={`${styles.servicesGrid} ${isVisible ? styles.gridVisible : ''}`}>
-          {filteredServices.map((service, index) => (
+          {servicesToRender.map((service, index) => (
             <div
               key={service.id}
               className={`${styles.serviceCard} ${isVisible ? styles.cardVisible : ''}`}
