@@ -1,17 +1,15 @@
 import * as React from "react"
-import Header from "../components/organisms/Header"
-import Footer from "../components/organisms/Footer"
+import Layout from "../components/templates/Layout"
+import { siteConfig } from "../config/siteConfig"
 import * as typography from "../components/atoms/Typography.module.css"
-
 
 const IndexPage = () => {
   return (
-    <>
-      <Header />
+    <Layout pageTitle="ホーム">
       <main>
         <div className="container text-center" style={{ padding: '4rem 0' }}>
           <h1 className={typography.heading1}>
-            Welcome to Your Company
+            Welcome to {siteConfig.siteName}
           </h1>
           <p className={`${typography.bodyLarge} ${typography.textSecondary}`} style={{ 
             maxWidth: '600px', 
@@ -21,8 +19,7 @@ const IndexPage = () => {
           </p>
         </div>
       </main>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

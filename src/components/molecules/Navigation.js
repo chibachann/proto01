@@ -4,23 +4,16 @@ import * as styles from "./Navigation.module.css"
 import * as typography from "../atoms/Typography.module.css"
 import Button from "../atoms/Button"
 
-const Navigation = ({ isOpen, onLinkClick }) => {
-  const navItems = [
-    { to: "/", label: "ホーム" },
-    { to: "/about", label: "会社概要" },
-    { to: "/services", label: "サービス" },
-    { to: "/contact", label: "お問い合わせ" },
-  ]
-
+const Navigation = ({ items = [], isOpen, onLinkClick, mobileCtaButton = null }) => {
   return (
     <>
       {/* Desktop Navigation */}
       <nav>
         <ul className={styles.nav}>
-          {navItems.map((item) => (
-            <li key={item.to} className={styles.navItem}>
+          {items.map((item) => (
+            <li key={item.path} className={styles.navItem}>
               <Link 
-                to={item.to} 
+                to={item.path} 
                 className={`${styles.navLink} ${typography.linkLight}`}
               >
                 {item.label}
@@ -33,10 +26,10 @@ const Navigation = ({ isOpen, onLinkClick }) => {
       {/* Mobile Navigation */}
       <nav className={`${styles.mobileNav} ${isOpen ? styles.open : ''}`}>
         <ul className={styles.mobileNavList}>
-          {navItems.map((item) => (
-            <li key={`mobile-${item.to}`} className={styles.mobileNavItem}>
+          {items.map((item) => (
+            <li key={`mobile-${item.path}`} className={styles.mobileNavItem}>
               <Link 
-                to={item.to} 
+                to={item.path} 
                 className={styles.mobileNavLink}
                 onClick={onLinkClick}
               >
@@ -46,14 +39,16 @@ const Navigation = ({ isOpen, onLinkClick }) => {
           ))}
         </ul>
         
-        <Button 
-          to="/contact" 
-          variant="secondary"
-          size="large"
-          onClick={onLinkClick}
-        >
-          お見積り依頼
-        </Button>
+        {mobileCtaButton && (
+          <Button 
+            to={mobileCtaButton.path} 
+            variant={mobileCtaButton.variant || "secondary"}
+            size="large"
+            onClick={onLinkClick}
+          >
+            {mobileCtaButton.label}
+          </Button>
+        )}
       </nav>
     </>
   )

@@ -1,0 +1,38 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Layout variants */
+.layoutCentered .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layoutFullWidth .main {
+  max-width: none;
+  padding: 0;
+}
+
+.layoutNarrow .main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Page-specific layouts */
+.landingPage {
+  background: linear-gradient(135deg, var(--color-primary-rgb) 0%, var(--color-secondary-rgb) 100%);
+}
+
+.landingPage .main {
+  background: white;
+  margin-top: 0;
+}
