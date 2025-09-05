@@ -2,7 +2,6 @@ import * as React from "react"
 import Layout from "../Layout"
 import HeroSection from "../../organisms/HeroSection"
 import ServicesSection from "../../organisms/ServicesSection"
-import AboutSection from "../../organisms/AboutSection"
 import FeaturesSection from "../../organisms/FeaturesSection"
 import TestimonialsSection from "../../organisms/TestimonialsSection"
 import ContactSection from "../../organisms/ContactSection"
@@ -48,23 +47,13 @@ const Homepage = ({
       
       {/* サービス紹介セクション */}
       <ServicesSection 
-        title={services.title || "プロフェッショナルサービス"}
-        subtitle={services.subtitle || "最新技術と専門知識で、お客様のビジネス課題を解決し、デジタル時代の成功をサポートします"}
+        title={services.title}
+        subtitle={services.subtitle}
         services={services.services}
         {...services}
       />
       
-      {/* 会社紹介セクション */}
-      <AboutSection 
-        title={about.title}
-        subtitle={about.subtitle}
-        description={about.description}
-        stats={about.stats}
-        ctaButton={about.ctaButton || defaultAboutCtaButton}
-        imageSrc={about.imageSrc || "/Hero01.jpg"}
-        imageAlt={about.imageAlt || "会社オフィスまたはチームの様子"}
-        {...about}
-      />
+
       
       {/* 特徴・強みセクション */}
       <FeaturesSection 
