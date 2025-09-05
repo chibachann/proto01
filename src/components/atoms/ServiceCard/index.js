@@ -1,13 +1,14 @@
 import * as React from "react"
-import * as styles from "./ContactItem.module.css"
+import * as styles from "./ServiceCard.module.css"
 
-const ContactItem = ({ 
-  icon, 
-  label, 
-  value, 
-  subtext, 
+const ServiceCard = ({ 
+  icon = "🔧",
+  title = "Service Title",
+  description = "Service description goes here.",
+  isVisible = false,
+  delay = 0,
   iconType = "text", // "text", "svg", "image"
-  className = "" 
+  className = ""
 }) => {
   const renderIcon = () => {
     if (iconType === "svg") {
@@ -20,17 +21,17 @@ const ContactItem = ({
   }
 
   return (
-    <div className={`${styles.contactItem} ${className}`}>
+    <div 
+      className={`${styles.serviceCard} ${isVisible ? styles.serviceCardVisible : ''} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       <div className={styles.iconWrapper}>
         {renderIcon()}
       </div>
-      <div className={styles.content}>
-        {label && <div className={styles.label}>{label}</div>}
-        <div className={styles.value}>{value}</div>
-        {subtext && <div className={styles.subtext}>{subtext}</div>}
-      </div>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
     </div>
   )
 }
 
-export default ContactItem
+export default ServiceCard

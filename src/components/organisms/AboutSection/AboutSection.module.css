@@ -1,0 +1,376 @@
+.aboutSection {
+  padding: 6rem 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><line x1="50" y1="0" x2="50" y2="400" stroke="rgba(135,20,37,0.12)" stroke-width="1"/><line x1="120" y1="0" x2="120" y2="400" stroke="rgba(135,20,37,0.08)" stroke-width="1"/><line x1="200" y1="0" x2="200" y2="400" stroke="rgba(135,20,37,0.06)" stroke-width="1"/><line x1="280" y1="0" x2="280" y2="400" stroke="rgba(135,20,37,0.04)" stroke-width="1"/><line x1="350" y1="0" x2="350" y2="400" stroke="rgba(135,20,37,0.03)" stroke-width="1"/></svg>');
+  background-size: 400px 400px;
+  pointer-events: none;
+}
+
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, rgba(135,20,37,0.03) 0%, transparent 50%, rgba(135,20,37,0.03) 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.textContent {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.textContentVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 2rem 0 3rem 0;
+}
+
+.missionSection,
+.visionSection {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: rgba(135, 20, 37, 0.02);
+  border-left: 4px solid rgb(var(--color-primary));
+  border-radius: 0 8px 8px 0;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+.sectionSubtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: rgb(var(--color-primary));
+}
+
+.missionText,
+.visionText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2d3748;
+  margin: 0;
+}
+
+.valuesSection {
+  margin: 3rem 0;
+}
+
+.valuesList {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.valueItem {
+  padding: 1.2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid rgba(135, 20, 37, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.valueItemVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.valueTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+  margin: 0 0 0.5rem 0;
+}
+
+.valueDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(135, 20, 37, 0.05) 0%, rgba(135, 20, 37, 0.02) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(135, 20, 37, 0.1);
+}
+
+.statItem {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.statItemVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgb(var(--color-primary));
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.ctaWrapper {
+  margin-top: 2rem;
+}
+
+.imageArea {
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.firstImageArea {
+  transform: translateX(-30px);
+}
+
+.secondImageArea {
+  transform: translateX(30px);
+}
+
+.imageAreaVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.aboutImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .aboutImage {
+  transform: scale(1.05);
+}
+
+.decorativeElement {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding: 5rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .content {
+    gap: 3rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .statNumber {
+    font-size: 2.2rem;
+  }
+  
+  .aboutImage {
+    height: 350px;
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .firstImageArea {
+    order: -1;
+    transform: translateY(-30px);
+  }
+  
+  .secondImageArea {
+    order: 3;
+    transform: translateY(30px);
+  }
+  
+  .imageAreaVisible {
+    transform: translateY(0);
+  }
+  
+  .textContent {
+    order: 1;
+    transform: translateY(0);
+    text-align: left;
+  }
+  
+  .aboutImage {
+    height: 200px;
+  }
+  
+  .missionSection,
+  .visionSection {
+    margin: 2rem 0;
+    padding: 1.2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .missionText,
+  .visionText {
+    font-size: 0.95rem;
+  }
+  
+  .valueItem {
+    padding: 1rem;
+  }
+  
+  .valueTitle {
+    font-size: 1rem;
+  }
+  
+  .valueDescription {
+    font-size: 0.9rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+  
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 3rem 0;
+  }
+  
+  .missionSection,
+  .visionSection {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+  
+  .missionText,
+  .visionText {
+    font-size: 0.9rem;
+  }
+  
+  .valueItem {
+    padding: 0.8rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .statNumber {
+    font-size: 1.6rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+}

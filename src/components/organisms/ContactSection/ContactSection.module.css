@@ -1,0 +1,246 @@
+.contactSection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgb(var(--color-secondary)) 0%, rgb(46, 10, 25) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,25 50,50 T100,50" stroke="white" stroke-width="0.5" fill="none" opacity="0.03"/><path d="M0,70 Q25,45 50,70 T100,70" stroke="white" stroke-width="0.5" fill="none" opacity="0.02"/><rect x="10" y="10" width="2" height="2" fill="white" opacity="0.05" transform="rotate(45 11 11)"/><rect x="80" y="80" width="2" height="2" fill="white" opacity="0.04" transform="rotate(45 81 81)"/></svg>');
+  background-size: 200px 200px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+/* SectionTitleの色をオーバーライド */
+.header h2 {
+  color: white !important;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.formArea {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.formAreaVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: #ff6b6b;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: rgb(var(--color-primary));
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary), 0.3);
+}
+
+.submitWrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contactInfo {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.contactInfoVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactInfoTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.contactItems {
+  margin-bottom: 2.5rem;
+}
+
+.contactItem {
+  margin-bottom: 1.5rem;
+}
+
+.mapPlaceholder {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 250px;
+}
+
+.mapImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 5rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .content {
+    gap: 3rem;
+  }
+  
+  .form {
+    padding: 2rem;
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .formArea {
+    transform: translateY(-30px);
+  }
+  
+  .formAreaVisible {
+    transform: translateY(0);
+  }
+  
+  .contactInfo {
+    transform: translateY(30px);
+  }
+  
+  .contactInfoVisible {
+    transform: translateY(0);
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .mapPlaceholder {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 3rem 0;
+  }
+  
+  .form {
+    padding: 1.2rem;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,537 @@
+/* ServicesSection.module.css - テーマカラー統一版 */
+
+.servicesSection {
+  position: relative;
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: linear-gradient(135deg, 
+    rgb(var(--color-secondary)) 0%, 
+    rgba(var(--color-secondary), 0.8) 30%,
+    rgba(var(--color-primary), 0.9) 70%, 
+    rgb(var(--color-primary)) 100%
+  );
+  overflow: hidden;
+}
+
+/* 背景装飾要素 */
+.backgroundDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingShape1 {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(var(--color-accent), 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 20s ease-in-out infinite;
+}
+
+.floatingShape2 {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(var(--color-primary), 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.floatingShape3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(var(--color-accent), 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse 30s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(90deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  75% { transform: translateY(-30px) rotate(270deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.15; }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ヘッダーセクション */
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTag {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(var(--color-accent), 0.2);
+  color: rgb(var(--color-accent));
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: 1px solid rgba(var(--color-accent), 0.4);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 0%, rgb(var(--color-accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(var(--color-accent), 0.9);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* サービスグリッド */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+/* サービスカード */
+.serviceCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCardVisible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.serviceCard:hover {
+  transform: translateY(-12px);
+  border-color: rgba(var(--color-accent), 0.5);
+  box-shadow: 
+    0 25px 50px rgba(var(--color-primary), 0.3),
+    0 0 0 1px rgba(var(--color-accent), 0.1);
+}
+
+/* カード背景グラデーション */
+.cardGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  border-radius: 24px;
+  transition: opacity 0.5s ease;
+}
+
+.serviceCard:hover .cardGradient {
+  opacity: 0.2;
+}
+
+/* ホバーエフェクト */
+.hoverEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(var(--color-accent), 0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.hoverEffectActive {
+  opacity: 1;
+}
+
+/* カードコンテンツ */
+.cardContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iconContainer {
+  margin-bottom: 2rem;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(var(--color-accent), 0.15);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--color-accent));
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--color-accent), 0.3);
+}
+
+.serviceCard:hover .iconWrapper {
+  transform: scale(1.1);
+  background: rgba(var(--color-accent), 0.25);
+  box-shadow: 0 10px 30px rgba(var(--color-primary), 0.2);
+  color: #ffffff;
+}
+
+.iconWrapper svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* テキストコンテンツ */
+.textContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceSubtitle {
+  font-size: 0.875rem;
+  color: rgb(var(--color-accent));
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.serviceDescription {
+  font-size: 1rem;
+  color: rgba(var(--color-accent), 0.8);
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  flex: 1;
+}
+
+/* フィーチャータグ */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  padding: 0.4rem 0.8rem;
+  background: rgba(var(--color-accent), 0.15);
+  color: rgb(var(--color-accent));
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 1px solid rgba(var(--color-accent), 0.3);
+}
+
+/* 詳細リンク */
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(var(--color-accent));
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+  margin-top: auto;
+}
+
+.serviceCard:hover .learnMore {
+  opacity: 1;
+  transform: translateX(0);
+  color: #ffffff;
+}
+
+.learnMore svg {
+  transition: transform 0.3s ease;
+}
+
+.learnMore:hover svg {
+  transform: translateX(4px);
+}
+
+/* CTAセクション */
+.ctaSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  border: 1px solid rgba(var(--color-accent), 0.2);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ctaSectionVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.ctaDescription {
+  font-size: 1.1rem;
+  color: rgba(var(--color-accent), 0.9);
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--color-primary), 0.4);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--color-primary), 0.6);
+  background: linear-gradient(135deg, rgba(var(--color-primary), 0.9) 0%, rgba(var(--color-secondary), 0.9) 100%);
+}
+
+.primaryButton svg {
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover svg {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: rgb(var(--color-accent));
+  border: 1px solid rgba(var(--color-accent), 0.5);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(var(--color-accent), 0.1);
+  border-color: rgb(var(--color-accent));
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1024px) {
+  .servicesSection {
+    padding: 6rem 0 4rem;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .serviceCard {
+    padding: 2rem;
+    min-height: 350px;
+  }
+  
+  .header {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 4rem 0 3rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .serviceCard {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+  
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .iconWrapper svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .serviceTitle {
+    font-size: 1.25rem;
+  }
+  
+  .serviceDescription {
+    font-size: 0.9rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+  }
+  
+  .servicesGrid {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesSection {
+    padding: 3rem 0 2rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .serviceCard {
+    padding: 1.2rem;
+  }
+  
+  .ctaSection {
+    padding: 2rem 1rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+  
+  .ctaDescription {
+    font-size: 1rem;
+  }
+}
