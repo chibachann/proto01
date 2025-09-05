@@ -8,7 +8,7 @@
 }
 
 .logo:hover {
-  color: rgb(197, 207, 195);
+  color: var(--color-accent-rgb);
 }
 
 @media (max-width: 480px) {

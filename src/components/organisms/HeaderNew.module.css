@@ -1,6 +1,6 @@
 /* Header Organism - Simplified */
 .header {
-  background-color: rgb(135, 20, 37); /* メインカラー */
+  background-color: var(--color-primary-rgb); /* メインカラー */
   color: white;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

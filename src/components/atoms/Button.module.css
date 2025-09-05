@@ -15,10 +15,10 @@
 
 /* Primary Button (CTA Style) */
 .buttonPrimary {
-  background: linear-gradient(135deg, rgb(46, 10, 25) 0%, rgb(46, 10, 25) 50%, rgb(197, 207, 195) 50%, rgb(197, 207, 195) 100%);
+  background: linear-gradient(135deg, var(--color-secondary-rgb) 0%, var(--color-secondary-rgb) 50%, var(--color-accent-rgb) 50%, var(--color-accent-rgb) 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
-  color: rgb(135, 20, 37);
+  color: var(--color-primary-rgb);
 }
 
 .buttonPrimary:hover {
@@ -30,12 +30,12 @@
 
 /* Secondary Button (Mobile Style) */
 .buttonSecondary {
-  background: rgb(197, 207, 195);
-  color: rgb(135, 20, 37);
+  background: var(--color-accent-rgb);
+  color: var(--color-primary-rgb);
 }
 
 .buttonSecondary:hover {
-  background-color: rgb(46, 10, 25);
+  background-color: var(--color-secondary-rgb);
   color: white;
 }
 

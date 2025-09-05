@@ -2,7 +2,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: rgb(197, 207, 195); /* サブカラー2 */
+  color: var(--color-accent-rgb); /* サブカラー2 */
   text-transform: uppercase;
   letter-spacing: 0.5px;
   position: relative;
@@ -15,7 +15,7 @@
   left: 0;
   width: 2rem;
   height: 2px;
-  background-color: rgb(197, 207, 195);
+  background-color: var(--color-accent-rgb);
 }
 
 @media (max-width: 768px) {

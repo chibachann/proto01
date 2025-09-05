@@ -78,7 +78,7 @@ a {
 }
 
 a:focus {
-  outline: 2px solid rgb(135, 20, 37);
+  outline: 2px solid var(--color-primary-rgb);
   outline-offset: 2px;
 }
 
@@ -104,7 +104,7 @@ button {
 }
 
 button:focus {
-  outline: 2px solid rgb(135, 20, 37);
+  outline: 2px solid var(--color-primary-rgb);
   outline-offset: 2px;
 }
 
@@ -181,27 +181,27 @@ p {
 
 /* Color utilities */
 .text-primary {
-  color: rgb(135, 20, 37);
+  color: var(--color-primary-rgb);
 }
 
 .text-secondary {
-  color: rgb(46, 10, 25);
+  color: var(--color-secondary-rgb);
 }
 
 .text-accent {
-  color: rgb(197, 207, 195);
+  color: var(--color-accent-rgb);
 }
 
 .bg-primary {
-  background-color: rgb(135, 20, 37);
+  background-color: var(--color-primary-rgb);
 }
 
 .bg-secondary {
-  background-color: rgb(46, 10, 25);
+  background-color: var(--color-secondary-rgb);
 }
 
 .bg-accent {
-  background-color: rgb(197, 207, 195);
+  background-color: var(--color-accent-rgb);
 }
 
 /* Responsive utilities */

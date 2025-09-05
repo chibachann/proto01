@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgb(135, 20, 37); /* メインカラー */
+  background-color: var(--color-primary-rgb); /* メインカラー */
   color: white;
   padding: 3rem 0 1rem 0;
   margin-top: 4rem;
@@ -31,11 +31,11 @@
   align-items: center;
   gap: 2rem;
   font-size: 0.9rem;
-  color: rgb(197, 207, 195); /* サブカラー2 */
+  color: var(--color-accent-rgb); /* サブカラー2 */
 }
 
 .copyright {
-  color: rgb(197, 207, 195);
+  color: var(--color-accent-rgb);
 }
 
 @media (max-width: 1024px) {

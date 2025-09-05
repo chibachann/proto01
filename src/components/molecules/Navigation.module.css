@@ -39,7 +39,7 @@
   left: 0;
   right: 0;
   bottom: -1rem;
-  background-color: rgb(46, 10, 25);
+  background-color: var(--color-secondary-rgb);
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.3s ease;
@@ -51,7 +51,7 @@
 }
 
 .navLink:hover {
-  color: rgb(197, 207, 195);
+  color: var(--color-accent-rgb);
   transform: translateY(-2px);
 }
 
@@ -62,7 +62,7 @@
   right: -100%;
   width: 280px;
   height: 100%;
-  background-color: rgb(135, 20, 37);
+  background-color: var(--color-primary-rgb);
   z-index: 999;
   transition: right 0.3s ease;
   padding: 2rem 0;
@@ -98,9 +98,9 @@
 }
 
 .mobileNavLink:hover {
-  background-color: rgb(46, 10, 25);
-  border-left-color: rgb(197, 207, 195);
-  color: rgb(197, 207, 195);
+  background-color: var(--color-secondary-rgb);
+  border-left-color: var(--color-accent-rgb);
+  color: var(--color-accent-rgb);
 }
 
 /* Mobile CTA Button Container */

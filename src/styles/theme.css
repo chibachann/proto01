@@ -1,0 +1,60 @@
+/**
+ * Theme Colors Configuration
+ * このファイルでテーマカラーを一元管理します
+ * 値を変更すると全体のカラーが変更されます
+ */
+
+:root {
+  /* メインテーマカラー */
+  --color-primary: 135, 20, 37;     /* メインカラー（深い赤） */
+  --color-secondary: 46, 10, 25;    /* サブカラー1（濃い茶色） */
+  --color-accent: 197, 207, 195;    /* サブカラー2（薄い緑） */
+  
+  /* RGB関数での使用用 */
+  --color-primary-rgb: rgb(var(--color-primary));
+  --color-secondary-rgb: rgb(var(--color-secondary));
+  --color-accent-rgb: rgb(var(--color-accent));
+  
+  /* アルファ値付きの使用用 */
+  --color-primary-alpha: rgba(var(--color-primary), 0.9);
+  --color-secondary-alpha: rgba(var(--color-secondary), 0.9);
+  --color-accent-alpha: rgba(var(--color-accent), 0.3);
+  
+  /* 一般的な色のバリエーション */
+  --text-primary: white;
+  --text-secondary: rgb(var(--color-accent));
+  --background-primary: rgb(var(--color-primary));
+  --background-secondary: rgb(var(--color-secondary));
+  --background-accent: rgb(var(--color-accent));
+}
+
+/* デバッグ用: テーマカラーのプレビュー */
+.theme-preview {
+  display: none; /* 通常は非表示 */
+}
+
+/* 開発時のテーマカラー確認用 */
+.theme-preview.visible {
+  display: flex;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.theme-preview .color-sample {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.theme-preview .color-sample.primary { background-color: var(--background-primary); }
+.theme-preview .color-sample.secondary { background-color: var(--background-secondary); }
+.theme-preview .color-sample.accent { background-color: var(--background-accent); }

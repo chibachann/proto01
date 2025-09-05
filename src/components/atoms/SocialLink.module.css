@@ -1,5 +1,5 @@
 .socialLink {
-  color: rgb(197, 207, 195); /* サブカラー2 */
+  color: var(--color-accent-rgb); /* サブカラー2 */
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 500;
