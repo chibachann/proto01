@@ -1,0 +1,36 @@
+.heroSubtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #4a5568;
+  margin: 0 0 1.5rem 0;
+  /* アニメーション初期状態 */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+.heroSubtitleVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+}

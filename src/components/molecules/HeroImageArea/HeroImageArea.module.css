@@ -1,0 +1,35 @@
+.heroImageArea {
+  flex: 1;
+  height: 80vh;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  /* アニメーション初期状態 */
+  opacity: 0;
+  transform: translateX(50px) scale(0.95);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.heroImageAreaVisible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .heroImageArea {
+    height: 70vh;
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .heroImageArea {
+    /* アニメーション初期状態を調整 */
+    transform: translateY(-30px) scale(0.95);
+  }
+  
+  .heroImageAreaVisible {
+    transform: translateY(0) scale(1);
+  }
+}

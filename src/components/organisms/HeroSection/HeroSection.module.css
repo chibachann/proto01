@@ -1,4 +1,4 @@
-/* HeroSection.module.css */
+/* HeroSection.module.css - レイアウト専用 */
 .heroSection {
   background-color: #ffffff;
   min-height: 80vh;
@@ -23,70 +23,23 @@
   align-items: center;
 }
 
-/* テキストコンテンツ */
+/* テキストコンテンツエリア */
 .textContent {
-  width: 520px; /* 固定横幅 */
+  width: 520px;
   padding: 4rem 2rem;
   background-color: #ffffff;
   position: relative;
   z-index: 3;
-  flex-shrink: 0; /* 縮小しない */
+  flex-shrink: 0;
+  /* アニメーション初期状態 */
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin: 0 0 1rem 0;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #4a5568;
-  margin: 0 0 1.5rem 0;
-}
-
-.description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666666;
-  margin: 0 0 2rem 0;
-}
-
-.ctaWrapper {
-  margin-top: 2rem;
-}
-
-/* 画像ゾーン */
-.imageZone {
-  flex: 1; /* 残りの領域を全て占める */
-  height: 80vh; /* ヒーローセクションの高さいっぱい */
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-}
-
-.placeholderText {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 500;
-  opacity: 0.8;
+.textContentVisible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* タブレット対応 */
@@ -99,25 +52,9 @@
     height: 70vh;
   }
   
-  .imageZone {
-    height: 70vh;
-  }
-  
   .textContent {
-    width: 400px; /* タブレット時は少し小さく */
+    width: 400px;
     padding: 3rem 1.5rem;
-  }
-  
-  .title {
-    font-size: 2.2rem;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .description {
-    font-size: 1rem;
   }
 }
 
@@ -136,13 +73,10 @@
   /* モバイルでは画像を上に、画面幅いっぱい */
   .imageZone {
     order: -1;
-    width: 100%;
-    height: 50vh; /* モバイルでは画面の半分の高さ */
+    width: 100vw;
+    height: 50vh;
     flex: none;
-  }
-  
-  .imagePlaceholder {
-    height: 100%;
+    margin-left: calc(-50vw + 50%);
   }
   
   .textContent {
@@ -154,44 +88,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* モバイル時のアニメーション調整 */
+    transform: translateY(30px);
   }
   
-  .title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .description {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  .textContentVisible {
+    transform: translateY(0);
   }
 }
 
 /* 小さいモバイル対応 */
 @media (max-width: 480px) {
   .imageZone {
-    height: 40vh; /* 小さい画面では少し低く */
+    width: 100vw;
+    height: 40vh;
+    margin-left: calc(-50vw + 50%);
   }
   
   .textContent {
-    width: 100%;
     padding: 1.5rem 0.75rem;
-  }
-  
-  .title {
-    font-size: 1.75rem;
-  }
-  
-  .subtitle {
-    font-size: 0.95rem;
-  }
-  
-  .description {
-    font-size: 0.9rem;
   }
 }

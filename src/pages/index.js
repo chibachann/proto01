@@ -22,6 +22,7 @@ const IndexPage = () => {
           ctaButton={ctaButton}
           backgroundColor="#667eea"
           imageAlt="ビジネスソリューションのイメージ"
+          imageSrc="/Hero01.jpg"
         />
         
         <div className="container text-center" style={{ padding: '4rem 0' }}>

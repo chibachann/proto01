@@ -1,0 +1,17 @@
+.heroTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.ctaWrapper {
+  margin-top: 2rem;
+  /* アニメーション初期状態 */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s;
+}
+
+.ctaVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
