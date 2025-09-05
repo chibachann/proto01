@@ -86,7 +86,8 @@
 @media (max-width: 768px) {
   .heroSection {
     flex-direction: column;
-    min-height: 80vh;
+    min-height: 100vh;
+    padding-bottom: 2rem;
   }
   
   .heroSection::before {
@@ -96,21 +97,22 @@
   
   .grid {
     flex-direction: column;
-    height: 80vh;
+    height: auto;
+    min-height: 100vh;
   }
   
   /* モバイルでは画像を上に、画面幅いっぱい */
   .imageZone {
     order: -1;
     width: 100vw;
-    height: 50vh;
+    height: 45vh;
     flex: none;
     margin-left: calc(-50vw + 50%);
   }
   
   .textContent {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 3rem 1rem;
     text-align: center;
     order: 1;
     flex: 1;
@@ -118,6 +120,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.98);
+    min-height: 50vh;
     /* モバイル時のアニメーション調整 */
     transform: translateY(30px);
   }
@@ -129,6 +132,11 @@
 
 /* 小さいモバイル対応 */
 @media (max-width: 480px) {
+  .heroSection {
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+  
   .imageZone {
     width: 100vw;
     height: 40vh;
@@ -136,6 +144,7 @@
   }
   
   .textContent {
-    padding: 1.5rem 0.75rem;
+    padding: 2rem 1rem 4rem 1rem;
+    min-height: 55vh;
   }
 }

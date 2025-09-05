@@ -1,15 +1,14 @@
 import * as React from "react"
-import FeatureCard from "../../atoms/FeatureCard"
-import SectionTitle from "../../atoms/SectionTitle"
 import * as styles from "./FeaturesSection.module.css"
 
 const FeaturesSection = ({ 
-  title = "私たちの強み",
-  subtitle = "お客様に選ばれる理由",
+  title = "なぜ選ばれるのか",
+  subtitle = "圧倒的な実績と信頼で、お客様のビジネスを次のレベルへ",
   features = [],
   className = ""
 }) => {
   const [isVisible, setIsVisible] = React.useState(false)
+  const [hoveredIndex, setHoveredIndex] = React.useState(null)
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,7 +18,7 @@ const FeaturesSection = ({
           observer.disconnect()
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     )
 
     const sectionRef = document.getElementById('features-section')
@@ -32,61 +31,58 @@ const FeaturesSection = ({
 
   const defaultFeatures = [
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 6v6l4 2"/>
-      </svg>`,
-      title: "戦略的アプローチ",
-      description: "お客様のビジネス目標を深く理解し、最適な戦略を立案。短期的な成果と長期的な成長の両方を実現します。",
-      iconType: "svg"
+      id: 1,
+      icon: '🚀',
+      title: '業界最速の開発スピード',
+      description: 'アジャイル開発とAI支援ツールにより、従来の3倍の速度でプロジェクトを完了。市場投入までの時間を大幅短縮します。',
+      stats: '平均30日',
+      color: 'rgba(var(--color-primary), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-primary), 0.8) 0%, rgba(var(--color-secondary), 0.6) 100%)'
     },
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
-      </svg>`,
-      title: "高速な実装力",
-      description: "アジャイル開発手法により、迅速かつ柔軟にプロジェクトを進行。市場の変化に素早く対応できるソリューションを提供。",
-      iconType: "svg"
+      id: 2,
+      icon: '🛡️',
+      title: '銀行レベルのセキュリティ',
+      description: 'ISO27001準拠の厳格なセキュリティ基準。暗号化、多要素認証、侵入検知システムで完全防御します。',
+      stats: '99.99%',
+      color: 'rgba(var(--color-secondary), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-secondary), 0.8) 0%, rgba(var(--color-accent), 0.6) 100%)'
     },
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-        <circle cx="12" cy="16" r="1"/>
-        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-      </svg>`,
-      title: "セキュリティ重視",
-      description: "最高レベルのセキュリティ基準を満たすシステム設計。お客様の大切なデータと信頼を確実に保護します。",
-      iconType: "svg"
+      id: 3,
+      icon: '⚡',
+      title: '自動スケーリング技術',
+      description: 'クラウドネイティブ設計により、トラフィック急増にも瞬時に対応。99.9%の高可用性を保証します。',
+      stats: '無制限',
+      color: 'rgba(var(--color-accent), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-accent), 0.8) 0%, rgba(var(--color-primary), 0.6) 100%)'
     },
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="18" y1="6" x2="6" y2="18"/>
-        <line x1="6" y1="6" x2="18" y2="18"/>
-        <line x1="12" y1="2" x2="12" y2="6"/>
-        <line x1="12" y1="18" x2="12" y2="22"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-      </svg>`,
-      title: "継続的改善",
-      description: "導入後も継続的なモニタリングと改善を実施。データに基づいた最適化でROIを最大化します。",
-      iconType: "svg"
+      id: 4,
+      icon: '📊',
+      title: 'リアルタイム分析',
+      description: 'ビッグデータとAIを活用した高度な分析機能。リアルタイムダッシュボードで意思決定を加速します。',
+      stats: '毎秒1M件',
+      color: 'rgba(var(--color-primary), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-primary), 0.6) 0%, rgba(var(--color-accent), 0.8) 100%)'
     },
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-        <circle cx="12" cy="7" r="4"/>
-      </svg>`,
-      title: "パートナーシップ",
-      description: "単なる受託開発ではなく、お客様の成功パートナーとして長期的な関係を築きます。",
-      iconType: "svg"
+      id: 5,
+      icon: '🌐',
+      title: 'グローバル対応',
+      description: '40ヶ国語対応、世界6拠点のCDNネットワーク。どこからでも高速アクセス可能なグローバルインフラ。',
+      stats: '40言語',
+      color: 'rgba(var(--color-secondary), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-secondary), 0.6) 0%, rgba(var(--color-primary), 0.8) 100%)'
     },
     {
-      icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-      </svg>`,
-      title: "卓越した品質",
-      description: "厳格な品質管理プロセスにより、業界最高水準の成果物を保証。お客様の期待を上回る価値を提供します。",
-      iconType: "svg"
+      id: 6,
+      icon: '💎',
+      title: '24/7 専任サポート',
+      description: '専門チームによる24時間365日のサポート体制。平均応答時間15分以内で、緊急時も安心です。',
+      stats: '15分以内',
+      color: 'rgba(var(--color-accent), 0.1)',
+      gradient: 'linear-gradient(135deg, rgba(var(--color-accent), 0.6) 0%, rgba(var(--color-secondary), 0.8) 100%)'
     }
   ]
 
@@ -94,28 +90,103 @@ const FeaturesSection = ({
 
   return (
     <section id="features-section" className={`${styles.featuresSection} ${className}`}>
+      {/* 背景装飾 */}
+      <div className={styles.backgroundElements}>
+        <div className={styles.floatingShape1}></div>
+        <div className={styles.floatingShape2}></div>
+        <div className={styles.floatingShape3}></div>
+        <div className={styles.gridPattern}></div>
+      </div>
+
       <div className={styles.container}>
-        <div className={styles.header}>
-          <SectionTitle 
-            title={title}
-            subtitle={subtitle}
-            isVisible={isVisible}
-            alignment="center"
-          />
+        {/* ヘッダーセクション */}
+        <div className={`${styles.header} ${isVisible ? styles.headerVisible : ''}`}>
+          <div className={styles.badge}>FEATURES</div>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.subtitle}>{subtitle}</p>
+          
+          <div className={styles.statsOverview}>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>500+</span>
+              <span className={styles.statLabel}>成功プロジェクト</span>
+            </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>99.9%</span>
+              <span className={styles.statLabel}>稼働率</span>
+            </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>24/7</span>
+              <span className={styles.statLabel}>サポート</span>
+            </div>
+          </div>
         </div>
-        
-        <div className={styles.featuresGrid}>
+
+        {/* フィーチャーグリッド */}
+        <div className={`${styles.featuresGrid} ${isVisible ? styles.gridVisible : ''}`}>
           {featuresToRender.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              iconType={feature.iconType || "text"}
-              isVisible={isVisible}
-              delay={index * 150}
-            />
+            <div
+              key={feature.id}
+              className={`${styles.featureCard} ${isVisible ? styles.cardVisible : ''}`}
+              style={{ 
+                transitionDelay: `${index * 100}ms`,
+                background: feature.gradient
+              }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* カード背景エフェクト */}
+              <div className={styles.cardGlow}></div>
+              
+              {/* アイコンとタイトル */}
+              <div className={styles.cardHeader}>
+                <div className={styles.iconWrapper}>
+                  <span className={styles.icon}>{feature.icon}</span>
+                </div>
+                <div className={styles.cardStats}>
+                  <span className={styles.statsNumber}>{feature.stats}</span>
+                </div>
+              </div>
+
+              {/* コンテンツ */}
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{feature.title}</h3>
+                <p className={styles.cardDescription}>{feature.description}</p>
+              </div>
+
+              {/* フッター */}
+              <div className={styles.cardFooter}>
+                <div className={styles.progressBar}>
+                  <div 
+                    className={styles.progressFill}
+                    style={{ 
+                      width: hoveredIndex === index ? '100%' : '60%',
+                      transitionDelay: `${index * 50}ms`
+                    }}
+                  ></div>
+                </div>
+                <div className={styles.cardAction}>
+                  <span>詳細を見る</span>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* CTA セクション */}
+        <div className={`${styles.ctaSection} ${isVisible ? styles.ctaVisible : ''}`}>
+          <div className={styles.ctaContent}>
+            <h3 className={styles.ctaTitle}>これらの機能を体験してみませんか？</h3>
+            <p className={styles.ctaDescription}>
+              無料デモで実際の性能をご確認いただけます
+            </p>
+            <button className={styles.ctaButton}>
+              <span>無料デモを予約</span>
+              <div className={styles.buttonGlow}></div>
+            </button>
+          </div>
         </div>
       </div>
     </section>
