@@ -1,0 +1,197 @@
+/* HeroSection.module.css */
+.heroSection {
+  background-color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.grid {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+}
+
+/* テキストコンテンツ */
+.textContent {
+  width: 520px; /* 固定横幅 */
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0; /* 縮小しない */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #4a5568;
+  margin: 0 0 1.5rem 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0 0 2rem 0;
+}
+
+.ctaWrapper {
+  margin-top: 2rem;
+}
+
+/* 画像ゾーン */
+.imageZone {
+  flex: 1; /* 残りの領域を全て占める */
+  height: 80vh; /* ヒーローセクションの高さいっぱい */
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.placeholderText {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .heroSection {
+    min-height: 70vh;
+  }
+  
+  .grid {
+    height: 70vh;
+  }
+  
+  .imageZone {
+    height: 70vh;
+  }
+  
+  .textContent {
+    width: 400px; /* タブレット時は少し小さく */
+    padding: 3rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* モバイル対応 - 画像が上、テキストが下 */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    min-height: 80vh;
+  }
+  
+  .grid {
+    flex-direction: column;
+    height: 80vh;
+  }
+  
+  /* モバイルでは画像を上に、画面幅いっぱい */
+  .imageZone {
+    order: -1;
+    width: 100%;
+    height: 50vh; /* モバイルでは画面の半分の高さ */
+    flex: none;
+  }
+  
+  .imagePlaceholder {
+    height: 100%;
+  }
+  
+  .textContent {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    order: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 小さいモバイル対応 */
+@media (max-width: 480px) {
+  .imageZone {
+    height: 40vh; /* 小さい画面では少し低く */
+  }
+  
+  .textContent {
+    width: 100%;
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+}
